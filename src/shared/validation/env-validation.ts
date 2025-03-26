@@ -27,4 +27,9 @@ export const envSchema = z.object({
     EMAIL_PASSWORD: z.string().optional(),
     EMAIL_FROM: z.string().optional(),
     EMAIL_SECURE: z.string().optional(),
+    STRIPE_SECRET: z.string().optional(),
+    PAYPAL_ENV: z.string().optional(),
+    PAYPAL_CLIENT_ID: z.string().optional(),
+    PAYPAL_CLIENT_SECRET: z.string().optional(),
+    
 });

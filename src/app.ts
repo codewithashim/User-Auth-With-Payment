@@ -7,6 +7,7 @@ import dotenv from 'dotenv';
 import globalErrorHandler from './shared/errors/global-error';
 import swaggerSpec from './shared/config/swagger-config';
 import swaggerUi from 'swagger-ui-express';
+import rateLimit from 'express-rate-limit';
 
 const app: Application = express();
 
@@ -25,6 +26,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(globalErrorHandler);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
+// Rate limiting to prevent brute-force attacks
+app.use(
+    rateLimit({
+        windowMs: 15 * 60 * 1000, // 15 minutes
+        max: 100, // 100 requests per IP
+    }),
+);
 
 /* 
 |--------------------------------------------------------------------------

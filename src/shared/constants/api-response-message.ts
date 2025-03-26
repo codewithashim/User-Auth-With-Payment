@@ -36,39 +36,6 @@ export const apiResponseMessage = {
         EMAIL_EXISTS: 'Email already exists',
     },
 
-    PROJECTS: {
-        FETCH_SUCCESS: 'Projects retrieved successfully',
-        FETCH_SINGLE_SUCCESS: 'Project retrieved successfully',
-        CREATE_SUCCESS: 'Project created successfully',
-        UPDATE_SUCCESS: 'Project updated successfully',
-        DELETE_SUCCESS: 'Project deleted successfully',
-        NOT_FOUND: 'Project not found',
-        NAME_EXISTS: 'Project name already exists',
-        INVALID_DATES: 'Invalid project dates',
-        INVALID_CLIENT: 'Invalid client information',
-        INVALID_PARTIES: 'Invalid parties involved',
-        FETCH_BY_CITY_SUCCESS:
-            'Projects for the specified city retrieved successfully',
-        ACTIVE_PROJECTS_FETCH_SUCCESS: 'Active projects retrieved successfully',
-        COMPLETED_PROJECTS_FETCH_SUCCESS:
-            'Completed projects retrieved successfully',
-        UPCOMING_PROJECTS_FETCH_SUCCESS:
-            'Upcoming projects retrieved successfully',
-    },
-
-    PARTIES: {
-        FETCH_SUCCESS: 'Parties retrieved successfully',
-        FETCH_SINGLE_SUCCESS: 'Party retrieved successfully',
-        CREATE_SUCCESS: 'Party created successfully',
-        UPDATE_SUCCESS: 'Party updated successfully',
-        DELETE_SUCCESS: 'Party deleted successfully',
-        NOT_FOUND: 'Party not found',
-        NAME_EXISTS: 'Party with this name already exists',
-        INVALID_TYPE: 'Invalid party type',
-        INVALID_GST: 'Invalid GST information',
-        INVALID_PARTY_ID: 'Invalid party ID format',
-    },
-
     HEALTH: {
         SERVER_RUNNING: 'Server is up and running',
     },
@@ -88,4 +55,12 @@ export const apiResponseMessage = {
         FORBIDDEN: 'You do not have permission to perform this action',
         NOT_FOUND: 'Resource not found',
     },
+
+    PAYMENTS : {
+        WEBHOOK_PROCESSED: 'Webhook processed successfully',
+        FETCH_SINGLE_SUCCESS: 'Payment retrieved successfully',
+        FETCH_SUCCESS: 'Payments retrieved successfully',
+        CHECKOUT_SUCCESS: 'Checkout successful',
+        NOT_FOUND: 'Payment not found',
+    }
 };

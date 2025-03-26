@@ -48,12 +48,20 @@ if (!parsedEnv.success) {
  * @property {string[]} allowDomains - List of allowed domains for CORS.
  */
 
-
 export const envConfig = {
     env: parsedEnv.data.NODE_ENV,
     port: parsedEnv.data.PORT,
     databaseUrl: parsedEnv.data.MONGO_URI,
     domain: parsedEnv.data.DOMAIN,
+    payment: {
+        paypal: {
+            successUrl: `${parsedEnv.data.DOMAIN}/success`,
+            cancelUrl: `${parsedEnv.data.DOMAIN}/cancel`,
+            paypalClientId: parsedEnv.data.PAYPAL_CLIENT_ID,
+            paypalClientSecret: parsedEnv.data.PAYPAL_CLIENT_SECRET,
+            paypalEnv: parsedEnv.data.PAYPAL_ENV,
+        },
+    },
     jwt: {
         secret: parsedEnv.data.JWT_SECRET,
         refreshSecret: parsedEnv.data.JWT_REFRESH_SECRET,
@@ -67,7 +75,7 @@ export const envConfig = {
         region: parsedEnv.data.AWS_REGION,
         bucketName: parsedEnv.data.AWS_BUCKET_NAME,
     },
-    email:{
+    email: {
         emailHost: parsedEnv.data.EMAIL_HOST,
         emailPort: parsedEnv.data.EMAIL_PORT,
         emailUser: parsedEnv.data.EMAIL_USER,
