@@ -38,9 +38,9 @@ const options: swaggerJsdoc.Options = {
     definition: {
         openapi: '3.0.0',
         info: {
-            title: 'Construction CRM API',
+            title: 'Auth & Payment API',
             version: '1.0.0',
-            description: 'API documentation for Construction CRM',
+            description: 'API documentation for Auth & Payment',
             license: {
                 name: 'MIT',
                 url: 'https://spdx.org/licenses/MIT.html',

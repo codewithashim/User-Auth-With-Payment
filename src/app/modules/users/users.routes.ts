@@ -12,11 +12,7 @@ const router = express.Router();
  * @description Get all users
  * @access Private (Admin only)
  */
-router.get(
-    '/',
-    authGuard(ENUM_USER_ROLE.ADMIN, ENUM_USER_ROLE.SUPER_ADMIN),
-    UserController.getAllUsers,
-);
+router.get('/', authGuard(ENUM_USER_ROLE.ADMIN), UserController.getAllUsers);
 
 /**
  * @route GET /api/users/:id
@@ -25,11 +21,7 @@ router.get(
  */
 router.get(
     '/:id',
-    authGuard(
-        ENUM_USER_ROLE.ADMIN,
-        ENUM_USER_ROLE.SUPER_ADMIN,
-        ENUM_USER_ROLE.USER,
-    ),
+    authGuard(ENUM_USER_ROLE.ADMIN, ENUM_USER_ROLE.USER),
     UserController.getUserById,
 );
 
@@ -42,7 +34,6 @@ router.patch(
     '/:id',
     authGuard(
         ENUM_USER_ROLE.ADMIN,
-        ENUM_USER_ROLE.SUPER_ADMIN,
         ENUM_USER_ROLE.USER,
     ),
     validateRequest(userValidation.updateUserZodSchema),
@@ -57,7 +48,7 @@ router.patch(
 
 router.delete(
     '/:id',
-    authGuard(ENUM_USER_ROLE.ADMIN, ENUM_USER_ROLE.SUPER_ADMIN),
+    authGuard(ENUM_USER_ROLE.ADMIN),
     UserController.deleteUser,
 );
 
