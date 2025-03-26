@@ -1,0 +1,48 @@
+# Node modules
+/node_modules
+
+# Build output
+/dist
+/build
+
+# Yarn PnP
+/.pnp
+.pnp.js
+
+# Cache
+.cache
+
+# Environment files
+/.env.local
+/.env.development.local
+/.env.test.local
+/.env.production.local
+/.env.staging.local
+/.env*
+/.env.development
+/.env.test
+/.env.production
+/.env
+
+# Logs
+/logs
+logs
+
+# Uploads
+/uploads
+/uploads/*
+/uploads/**/*
+
+# Temporary files and other common ignores
+.DS_Store
+Thumbs.db
+
+# Other
+*.log
+*.tmp
+.env
+/.env.development
+/.env.test
+/.env.production
+/.env
+.qodo

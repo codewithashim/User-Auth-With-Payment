@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  # Development Service
+  dev:
+    build:
+      context: .
+      target: development
+    container_name: construction-crm-dev
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - NODE_ENV=development
+    env_file:
+      - .env.development   # Use the .env.development for development environment
+    command: npm run dev
+    networks:
+      - crm-network
+    restart: always
+
+networks:
+  crm-network:
+    driver: bridge
