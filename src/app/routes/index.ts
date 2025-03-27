@@ -2,7 +2,9 @@ import express from 'express';
 import { UserRoutes } from '../modules/users/users.routes';
 import { healthCheck } from '../modules/health/health.controller';
 import { AuthRoutes } from '../modules/auth/auth.routes';
-import { paymentRoutes } from '../modules/payments/payments.routes';
+import {
+    PaymentRoutes,
+} from '../modules/payments/payments.routes';
 
 const router = express.Router();
 
@@ -21,7 +23,7 @@ const moduleRoutes = [
     },
     {
         path: '/payments',
-        route: paymentRoutes,
+        route: PaymentRoutes,
     },
 ];
 
