@@ -39,7 +39,7 @@ const paypalClient = new core.PayPalHttpClient(paypalEnv);
  * @throws ApiError if session creation fails
  */
 const createCheckoutSession = async (
-    userId: string,
+    userId: any,
     amount: number,
     currency: string = 'usd',
 ): Promise<{ url: string; payment: IPayment }> => {

@@ -114,7 +114,7 @@
 
 /**
  * @swagger
- * /api/payments/checkout:
+ * /payments/checkout:
  *   post:
  *     summary: Create a PayPal checkout session
  *     tags: [Payments]
@@ -152,17 +152,11 @@
  *         $ref: '#/components/responses/UnauthorizedError'
  *       403:
  *         $ref: '#/components/responses/ForbiddenError'
- *       500:
- *         description: Internal server error
- *         content:
- *           application/json:
- *             schema:
- *               $ref: '#/components/schemas/Error'
  */
 
 /**
  * @swagger
- * /api/payments/webhook:
+ * /payments/webhook:
  *   post:
  *     summary: Handle PayPal webhook events
  *     tags: [Payments]
@@ -200,17 +194,11 @@
  *                   $ref: '#/components/schemas/Payment'
  *       404:
  *         $ref: '#/components/responses/NotFoundError'
- *       500:
- *         description: Internal server error
- *         content:
- *           application/json:
- *             schema:
- *               $ref: '#/components/schemas/Error'
  */
 
 /**
  * @swagger
- * /api/payments:
+ * /payments:
  *   get:
  *     summary: Retrieve a list of payments
  *     tags: [Payments]
@@ -236,7 +224,7 @@
  *         name: sortBy
  *         schema:
  *           type: string
- *         description: The field to sort by (e.g., 'createdAt', 'amount')
+ *         description: The field to sort by
  *       - in: query
  *         name: sortOrder
  *         schema:
@@ -247,22 +235,10 @@
  *         name: searchTerm
  *         schema:
  *           type: string
- *         description: Search term to filter payments (e.g., by paymentId)
- *       - in: query
- *         name: status
- *         schema:
- *           type: string
- *           enum: [pending, completed, failed, refunded]
- *         description: Filter payments by status
- *       - in: query
- *         name: gateway
- *         schema:
- *           type: string
- *           enum: [paypal, stripe]
- *         description: Filter payments by gateway
+ *         description: Search term to filter payments
  *     responses:
  *       200:
- *         description: A list of payments
+ *         description: A list of payments.
  *         content:
  *           application/json:
  *             schema:
@@ -295,7 +271,7 @@
 
 /**
  * @swagger
- * /api/payments/{id}:
+ * /payments/{id}:
  *   get:
  *     summary: Get a payment by ID
  *     tags: [Payments]
@@ -307,10 +283,10 @@
  *         required: true
  *         schema:
  *           type: string
- *         description: The payment ID (MongoDB ObjectId)
+ *         description: The payment ID
  *     responses:
  *       200:
- *         description: The payment details
+ *         description: The payment details.
  *         content:
  *           application/json:
  *             schema:
