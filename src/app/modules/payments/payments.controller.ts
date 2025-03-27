@@ -13,8 +13,7 @@ import { PaymentService } from './payments.service';
  */
 const createCheckout = catchAsync(async (req: Request, res: Response) => {
     const { amount, currency } = req.body;
-    const userId = req.user!.id;
-
+    const userId = req.user!.userId;
     const result = await PaymentService.createCheckoutSession(
         userId,
         amount,
